@@ -1,0 +1,14 @@
+{
+  "name": "traning",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Luis Morla",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.3.3"
+  }
+}
