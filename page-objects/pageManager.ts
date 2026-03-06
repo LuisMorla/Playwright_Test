@@ -1,17 +1,17 @@
 import {test, expect, Page} from '@playwright/test'
-import { Objects } from './objects'
+import { Elements } from './elements'
 
 export class PageManager{
     private readonly page : Page
-    private readonly objects : Objects
+    private readonly elements : Elements
 
     constructor(page : Page){
         this.page = page
-        this.objects = new Objects(this.page)
+        this.elements = new Elements(this.page)
     }
 
-    onObjects(){
-        return this.objects
+    onElements(){
+        return this.elements
     }
 
 }
