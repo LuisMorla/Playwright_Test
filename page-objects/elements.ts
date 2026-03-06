@@ -9,6 +9,10 @@ export class Elements extends HelperBase{
     private readonly currentAddress : Locator
     private readonly permanentAddress : Locator
     private readonly submitBtn : Locator
+    private readonly inputNameValidation : Locator
+    private readonly inputEmailValidation : Locator
+    private readonly currentAddressValidation : Locator
+    private readonly permanentAddressValidation : Locator
 
 
     constructor(page : Page){
@@ -20,6 +24,10 @@ export class Elements extends HelperBase{
         this.currentAddress = page.locator('#currentAddress')
         this.permanentAddress = page.locator('#permanentAddress')
         this.submitBtn = page.locator('#submit')
+        this.inputNameValidation = page.locator('.border #name')
+        this.inputEmailValidation = page.locator('.border #email')
+        this.currentAddressValidation = page.locator('.border #currentAddress')
+        this.permanentAddressValidation = page.locator('.border #permanentAddress')
 
     }
 
@@ -34,5 +42,9 @@ export class Elements extends HelperBase{
         await this.currentAddress.fill(cAddress)
         await this.permanentAddress.fill(pAddress)
         await this.submitBtn.click()
+        await expect(this.inputEmailValidation).toHaveText(fName)
+        await expect(this.inputEmailValidation).toHaveText(email)
+        await expect(this.currentAddressValidation).toHaveText(cAddress)
+        await expect(this.permanentAddressValidation).toHaveText(pAddress)
     }
 }
