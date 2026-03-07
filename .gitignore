@@ -9,3 +9,4 @@ node_modules/
 /allure-report/
 /allure-results/
 docker-compose.yaml
+.env

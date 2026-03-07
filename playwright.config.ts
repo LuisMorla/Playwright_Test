@@ -13,6 +13,7 @@ reporter: [
       createArgosReporterOptions({
         // Upload to Argos on CI only.
         uploadToArgos: !!process.env.CI,
+        token: process.env.ARGOS_TOKEN,
       }),
     ],
   ],
