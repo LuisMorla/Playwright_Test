@@ -42,9 +42,9 @@ export class Elements extends HelperBase{
         await this.currentAddress.fill(cAddress)
         await this.permanentAddress.fill(pAddress)
         await this.submitBtn.click()
-        await expect(this.inputEmailValidation).toHaveText(fName)
-        await expect(this.inputEmailValidation).toHaveText(email)
-        await expect(this.currentAddressValidation).toHaveText(cAddress)
-        await expect(this.permanentAddressValidation).toHaveText(pAddress)
+        await expect(this.inputNameValidation).toContainText(fName)
+        await expect(this.inputEmailValidation).toContainText(email)
+        await expect(this.currentAddressValidation).toContainText(cAddress)
+        await expect(this.permanentAddressValidation).toContainText(pAddress)
     }
 }
