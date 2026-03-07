@@ -6,9 +6,16 @@
   "author": "Luis Morla",
   "type": "commonjs",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "execute-from-chrome": "npx playwright test demoQA-Elements.spec.ts --project=chromium",
+    "execute-from-firefox": "npx playwright test demoQA-Elements.spec.ts --project=firefox",
+    "execute-all": "npx run execute-from-chrome && npx run execute-from-firefox",
+    "execute-all-parallel": "npx run execute-from-chrome & npx run execute-from-firefox"
+  },
   "devDependencies": {
+    "@faker-js/faker": "^10.3.0",
     "@playwright/test": "^1.58.2",
-    "@types/node": "^25.3.3"
+    "@types/node": "^25.3.3",
+    "allure-playwright": "^3.6.0"
   }
 }
