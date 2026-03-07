@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
 
   retries: 1,
-  reporter: "allure-playwright",
+  reporter: 'html',
 
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
