@@ -1,10 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { PageManager } from '../page-objects/pageManager';    
 import {faker} from '@faker-js/faker'
+import { argosScreenshot } from "@argos-ci/playwright";
 
 test.describe('Elements', async () => {
     test.beforeEach(async({page}) =>{
     await page.goto('https://demoqa.com/');
+    await argosScreenshot(page, "homepage");
   })
 
   test('Validate Elements', async({page})=>{

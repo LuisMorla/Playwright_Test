@@ -1,16 +1,28 @@
 import { defineConfig, devices } from '@playwright/test';
+import { createArgosReporterOptions } from "@argos-ci/playwright/reporter";
 
 export default defineConfig({
 
   retries: 1,
-  reporter: 'html',
-
+reporter: [
+    // Use "dot" reporter on CI, "list" otherwise (Playwright default).
+    process.env.CI ? ["dot"] : ["list"],
+    // Add Argos reporter.
+    [
+      "@argos-ci/playwright/reporter",
+      createArgosReporterOptions({
+        // Upload to Argos on CI only.
+        uploadToArgos: !!process.env.CI,
+      }),
+    ],
+  ],
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    screenshot: "only-on-failure",
   },
 
 
