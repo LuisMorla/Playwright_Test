@@ -8,8 +8,9 @@ test.describe('Elements', async () => {
     await argosScreenshot(page, "homepage");
   })
 
-  test('Validate Elements', async({pageManager, fakerData})=>{
+  test('Validate Elements', async({page, pageManager, fakerData, vrt})=>{
     await pageManager.onElements().elementsButton()
     await pageManager.onElements().textBoxes(fakerData.user, fakerData.email, fakerData.cAddress, fakerData.pAddress)
+await vrt.trackPage(page, 'Home Page DemoQA')
   })
 });
