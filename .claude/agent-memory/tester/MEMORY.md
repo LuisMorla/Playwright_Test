@@ -1,0 +1,2 @@
+- [Proyecto SCRUM / Zephyr Scale](project_scrum_zephyr.md) — prioridades, folder, mapeo issueId, historias sin AC formales, demoqa.com
+- [Flujo confirmado de creación de casos](feedback_test_case_workflow.md) — orden create→steps(OVERWRITE)→link(issueId numérico) sin errores
