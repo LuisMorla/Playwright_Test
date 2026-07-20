@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import { createArgosReporterOptions } from "@argos-ci/playwright/reporter";
+import type { TestOptions } from './test-options';
 
-export default defineConfig({
+export default defineConfig<TestOptions>({
 
   retries: 1,
 reporter: [
@@ -20,7 +21,7 @@ reporter: [
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-
+    globalsUrl: 'https://demoqa.com/',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: "only-on-failure",
