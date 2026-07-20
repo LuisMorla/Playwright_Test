@@ -28,6 +28,8 @@ pipeline {
         }
     }
 
+    //post
+
     post {
         always {
             junit allowEmptyResults: true, testResults: 'results.xml'
