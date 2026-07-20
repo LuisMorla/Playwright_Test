@@ -20,7 +20,7 @@ pipeline {
 
         stage('Run Playwright regression') {
             when {
-                expression { env.CHANGE_TARGET == 'development' || env.CHANGE_TARGET == null }
+                expression { env.CHANGE_TARGET == null || env.CHANGE_TARGET.equalsIgnoreCase('development') }
             }
             steps {
                 sh 'npx playwright test --reporter=list,junit,html'
