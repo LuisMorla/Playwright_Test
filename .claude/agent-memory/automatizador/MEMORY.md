@@ -8,3 +8,4 @@
 - [gh CLI auth state](gh_cli_not_authenticated.md) — auth flips between sessions; always re-check `gh auth status` before assuming PR creation needs a manual fallback
 - [DemoQA alerts page quirks](demoqa_alerts_dialog_quirks.md) — Promise.all+dialog deadlock on sync dialogs; use page.once('dialog',...) instead; Zephyr text mismatch on #alertButton
 - [DemoQA checkbox tree page quirks](demoqa_checkbox_tree_quirks.md) — rc-tree not react-checkbox-tree; no Expand/Collapse-all controls exist; getByRole('treeitem') without exact; aria-checked mixed state; #result item join has no separator
+- [DemoQA buttons page quirks](demoqa_buttons_page_quirks.md) — 3rd "Click Me" button has dynamic id/class, locate via getByRole exact:true; message elements absent until triggered
